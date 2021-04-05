@@ -1,3 +1,5 @@
+[![Terraform Testing and Release](https://github.com/mtharpe/terraform-aws-chef-demo/actions/workflows/terraform.yml/badge.svg?branch=master)](https://github.com/mtharpe/terraform-aws-chef-demo/actions/workflows/terraform.yml)
+
 # Description
 
 This repo demonstrates how to use the Chef provisioner with Terraform.
