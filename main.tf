@@ -118,11 +118,3 @@ resource "aws_instance" "web-01" {
     user_key        = var.chef_pem
   }
 }
-
-resource "aws_route53_record" "web-01" {
-  zone_id = aws_route53_zone.private.zone_id
-  name    = "web-01.axis.local"
-  type    = "A"
-  ttl     = "300"
-  records = [aws_instance.web-01.private_ip]
-}
