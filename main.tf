@@ -94,18 +94,18 @@ resource "aws_instance" "web-01" {
   }
 
   connection {
-    host = coalesce(self.public_ip, self.private_ip)
-    type = "ssh"
-    user = "ubuntu"
+    host        = coalesce(self.public_ip, self.private_ip)
+    type        = "ssh"
+    user        = "ubuntu"
     private_key = var.private_key
   }
 
   instance_type = "t2.micro"
 
-  ami = var.aws_amis
-  key_name = aws_key_pair.auth.id
+  ami                    = var.aws_amis
+  key_name               = aws_key_pair.auth.id
   vpc_security_group_ids = [aws_security_group.default.id]
-  subnet_id = aws_subnet.web.id
+  subnet_id              = aws_subnet.web.id
 
   provisioner "chef" {
     environment     = var.chef_environment

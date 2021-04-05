@@ -8,28 +8,28 @@ variable "private_key" {
 
 variable "key_name" {
   description = "Desired name of AWS key pair"
-  default = "terraform"
+  default     = "terraform"
 }
 
 variable "aws_region" {
   description = "AWS region to launch servers"
-  default = "us-east-2"
+  default     = "us-east-2"
 }
 
 variable "aws_amis" {
   description = "AWS AMI ID used for machine deployments"
-  default = ""
+  default     = ""
 }
 
 # Chef global vars
 variable "chef_environment" {
   description = "Chef Environment the machine will join"
-  default = "_default"
+  default     = "_default"
 }
 
 variable "server_runlist" {
   description = "Chef Runlist items"
-  default = "chef-linux-base-recipe::default"
+  default     = "chef-linux-base-recipe::default"
 }
 
 variable "chef_server_url" {
