@@ -60,18 +60,6 @@ resource "aws_subnet" "web" {
 data "aws_availability_zones" "available" {
 }
 
-#########################
-# Setup Management Subnet
-#########################
-resource "aws_subnet" "management" {
-  vpc_id                  = aws_vpc.demo-tfe.id
-  cidr_block              = "10.0.100.0/24"
-  map_public_ip_on_launch = true
-  tags = {
-    Name = "Management"
-  }
-}
-
 ########################
 # Default Security group
 ########################
